@@ -1,12 +1,11 @@
 import { gql } from "@/app/lib/gql";
 
-export const getTodosQuery = gql( `
-  query Todos {
-    todos {
+export const getTimerQuery = gql( `
+  query TimerQuery {
+    timer {
       id
-      title
-      done
       createdAt
+      timeSince
     }
   }
 `);

@@ -4,49 +4,47 @@ import prisma from "@/app/lib/prisma";
 import { startServerAndCreateNextHandler } from "@as-integrations/next";
 
 const typeDefs = `#graphql
-  type Todo {
+  type Timer {
     id: String!
-    title: String!
-    done: Boolean!
     createdAt: String!
+    timeSince: Int!
   }
 
   type Query {
-    todos: [Todo!]!
+    timer: [Timer!]!
   }
 
   type Mutation {
-    createTodo(title: String!): Todo!
-    updateTodo(id: String!, done: Boolean!): Todo!
+    CreateTimer(timeSince: Int!): Timer!
+    UpdateTimer(timeSince: Int!): Timer!
   }
 `;
 
 const resolvers = {
-  Mutation: {
-    createTodo: async (_: never, args: { title: string }) => {
-      const newTodo = prisma.todo.create({
-        data: {
-          title: args.title,
-          done: false,
-        },
-      });
-      return newTodo;
-    },
-    updateTodo: async (_: never, args: { done: boolean; id: string }) => {
-      const updatedTodo = await prisma.todo.update({
-        where: {
-          id: args.id,
-        },
-        data: {
-          done: args.done,
-        },
-      });
-      return updatedTodo;
-    },
-  },
   Query: {
-    todos: async () => prisma.todo.findMany(),
+    timer: async () => prisma.timer.findMany(),
   },
+  Mutation: {
+    CreateTimer: async (_: never, args: { timeSince: number }) => {
+      const createTimer = await prisma.timer.create({
+        data: {
+          timeSince: args.timeSince,
+        },
+      });
+      return createTimer;
+    },
+    UpdateTimer: async (_: never, args: { timeSince: number }) => {
+      const updatedTimer = await prisma.timer.update({
+        data: {
+          timeSince: args.timeSince,
+        },
+        where: {
+          id: "cltk816hw0000p3crhdhs6fyx",
+        },
+      });
+      return updatedTimer;
+    },
+  }
 };
 
 const apolloServer = new ApolloServer({

@@ -1,23 +1,21 @@
 import { gql } from "@/app/lib/gql";
 
-export const insertTodoMutation = gql(/* GraphQL */ `
-  mutation Mutation($title: String!) {
-    createTodo(title: $title) {
-      id
-      title
-      done
+export const CreateTimerMutation = gql(/* GraphQL */ `
+  mutation CreateTimer($timeSince: Int!) {
+    CreateTimer(timeSince: $timeSince) {
       createdAt
+      id
+      timeSince
     }
   }
 `);
 
-export const updateTodoMutation = gql(/* GraphQL */ `
-  mutation UpdateTodo($updateTodoId: String!, $done: Boolean!) {
-    updateTodo(id: $updateTodoId, done: $done) {
+export const UpdateTimer = gql(/* GraphQL */ `
+  mutation updateTimer($timeSince: Int!) {
+    updateTodo(timeSince: $timeSince) {
       id
-      title
-      done
       createdAt
+      timeSince
     }
   }
 `);

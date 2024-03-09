@@ -18,55 +18,38 @@ export type Scalars = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createTodo: Todo;
-  updateTodo: Todo;
+  CreateTimer: Timer;
 };
 
 
-export type MutationCreateTodoArgs = {
-  title: Scalars['String']['input'];
-};
-
-
-export type MutationUpdateTodoArgs = {
-  done: Scalars['Boolean']['input'];
-  id: Scalars['String']['input'];
+export type MutationCreateTimerArgs = {
+  timeSince: Scalars['Int']['input'];
 };
 
 export type Query = {
   __typename?: 'Query';
-  todos: Array<Todo>;
+  timer: Array<Timer>;
 };
 
-export type Todo = {
-  __typename?: 'Todo';
+export type Timer = {
+  __typename?: 'Timer';
   createdAt: Scalars['String']['output'];
-  done: Scalars['Boolean']['output'];
   id: Scalars['String']['output'];
-  title: Scalars['String']['output'];
+  timeSince: Scalars['Int']['output'];
 };
 
-export type MutationMutationVariables = Exact<{
-  title: Scalars['String']['input'];
+export type CreateTimerMutationVariables = Exact<{
+  timeSince: Scalars['Int']['input'];
 }>;
 
 
-export type MutationMutation = { __typename?: 'Mutation', createTodo: { __typename?: 'Todo', id: string, title: string, done: boolean, createdAt: string } };
+export type CreateTimerMutation = { __typename?: 'Mutation', CreateTimer: { __typename?: 'Timer', createdAt: string, id: string, timeSince: number } };
 
-export type UpdateTodoMutationVariables = Exact<{
-  updateTodoId: Scalars['String']['input'];
-  done: Scalars['Boolean']['input'];
-}>;
+export type TimerQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type UpdateTodoMutation = { __typename?: 'Mutation', updateTodo: { __typename?: 'Todo', id: string, title: string, done: boolean, createdAt: string } };
-
-export type TodosQueryVariables = Exact<{ [key: string]: never; }>;
+export type TimerQueryQuery = { __typename?: 'Query', timer: Array<{ __typename?: 'Timer', id: string, createdAt: string, timeSince: number }> };
 
 
-export type TodosQuery = { __typename?: 'Query', todos: Array<{ __typename?: 'Todo', id: string, title: string, done: boolean, createdAt: string }> };
-
-
-export const MutationDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"Mutation"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"title"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createTodo"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"title"},"value":{"kind":"Variable","name":{"kind":"Name","value":"title"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"done"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}}]}}]} as unknown as DocumentNode<MutationMutation, MutationMutationVariables>;
-export const UpdateTodoDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"UpdateTodo"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"updateTodoId"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"done"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"updateTodo"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"updateTodoId"}}},{"kind":"Argument","name":{"kind":"Name","value":"done"},"value":{"kind":"Variable","name":{"kind":"Name","value":"done"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"done"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}}]}}]} as unknown as DocumentNode<UpdateTodoMutation, UpdateTodoMutationVariables>;
-export const TodosDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Todos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"todos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"done"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}}]}}]}}]} as unknown as DocumentNode<TodosQuery, TodosQueryVariables>;
+export const CreateTimerDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"CreateTimer"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"timeSince"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Int"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"CreateTimer"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"timeSince"},"value":{"kind":"Variable","name":{"kind":"Name","value":"timeSince"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"timeSince"}}]}}]}}]} as unknown as DocumentNode<CreateTimerMutation, CreateTimerMutationVariables>;
+export const TimerQueryDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"TimerQuery"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"timer"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"createdAt"}},{"kind":"Field","name":{"kind":"Name","value":"timeSince"}}]}}]}}]} as unknown as DocumentNode<TimerQueryQuery, TimerQueryQueryVariables>;

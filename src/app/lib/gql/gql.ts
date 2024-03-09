@@ -13,9 +13,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n  mutation Mutation($title: String!) {\n    createTodo(title: $title) {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n": types.MutationDocument,
-    "\n  mutation UpdateTodo($updateTodoId: String!, $done: Boolean!) {\n    updateTodo(id: $updateTodoId, done: $done) {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n": types.UpdateTodoDocument,
-    "\n  query Todos {\n    todos {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n": types.TodosDocument,
+    "\n  mutation CreateTimer($timeSince: Int!) {\n    CreateTimer(timeSince: $timeSince) {\n      createdAt\n      id\n      timeSince\n    }\n  }\n": types.CreateTimerDocument,
+    "\n  query TimerQuery {\n    timer {\n      id\n      createdAt\n      timeSince\n    }\n  }\n": types.TimerQueryDocument,
 };
 
 /**
@@ -35,15 +34,11 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  mutation Mutation($title: String!) {\n    createTodo(title: $title) {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n"): (typeof documents)["\n  mutation Mutation($title: String!) {\n    createTodo(title: $title) {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n"];
+export function gql(source: "\n  mutation CreateTimer($timeSince: Int!) {\n    CreateTimer(timeSince: $timeSince) {\n      createdAt\n      id\n      timeSince\n    }\n  }\n"): (typeof documents)["\n  mutation CreateTimer($timeSince: Int!) {\n    CreateTimer(timeSince: $timeSince) {\n      createdAt\n      id\n      timeSince\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  mutation UpdateTodo($updateTodoId: String!, $done: Boolean!) {\n    updateTodo(id: $updateTodoId, done: $done) {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n"): (typeof documents)["\n  mutation UpdateTodo($updateTodoId: String!, $done: Boolean!) {\n    updateTodo(id: $updateTodoId, done: $done) {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n"];
-/**
- * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function gql(source: "\n  query Todos {\n    todos {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n"): (typeof documents)["\n  query Todos {\n    todos {\n      id\n      title\n      done\n      createdAt\n    }\n  }\n"];
+export function gql(source: "\n  query TimerQuery {\n    timer {\n      id\n      createdAt\n      timeSince\n    }\n  }\n"): (typeof documents)["\n  query TimerQuery {\n    timer {\n      id\n      createdAt\n      timeSince\n    }\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

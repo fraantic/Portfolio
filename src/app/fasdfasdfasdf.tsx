@@ -16,12 +16,11 @@ import { useMutation, useQuery } from "@apollo/client";
 import { getTodosQuery } from "@/app/lib/graphql/query";
 import styles from "./page.module.scss";
 
-export default function Home() {
+function asdf() {
   const [title, setTitle] = useState("");
 
   const { loading, error, data, refetch } = useQuery(getTodosQuery);
   const [createTodo, { data: dataCreate }] = useMutation(insertTodoMutation);
-  const [updateTodo, { data: dataUpdate }] = useMutation(updateTodoMutation);
 
   useEffect(() => {
     if (dataCreate || dataUpdate) {
@@ -30,7 +29,11 @@ export default function Home() {
     }
   }, [dataCreate, refetch, dataUpdate]);
 
-  console.log(error)
+
+  const d = new Date();
+  let time = d.getTime();
+
+  console.log(time)
   if (error) return <p>Error</p>;
 
   return (

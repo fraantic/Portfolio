@@ -10,9 +10,8 @@ datasource db {
   url = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
-model Todo {
+model Timer {
   id        String @id @default(cuid())
-  title     String
-  done      Boolean  @default(false)
   createdAt DateTime @default(now())
+  timeSince Int
 }
