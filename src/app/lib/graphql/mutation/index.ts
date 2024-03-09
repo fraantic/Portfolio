@@ -12,7 +12,7 @@ export const insertTodoMutation = gql(/* GraphQL */ `
 `);
 
 export const updateTodoMutation = gql(/* GraphQL */ `
-  mutation UpdateTodo($updateTodoId: Int!, $done: Boolean!) {
+  mutation UpdateTodo($updateTodoId: String!, $done: Boolean!) {
     updateTodo(id: $updateTodoId, done: $done) {
       id
       title
