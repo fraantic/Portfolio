@@ -30,7 +30,7 @@ export default function Home() {
     }
   }, [dataCreate, refetch, dataUpdate]);
 
-  console.log(data)
+  console.log(error)
   if (error) return <p>Error</p>;
 
   return (
