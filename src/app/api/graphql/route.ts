@@ -5,7 +5,7 @@ import { startServerAndCreateNextHandler } from "@as-integrations/next";
 
 const typeDefs = `#graphql
   type Todo {
-    id: Int!
+    id: String!
     title: String!
     done: Boolean!
     createdAt: String!
@@ -17,7 +17,7 @@ const typeDefs = `#graphql
 
   type Mutation {
     createTodo(title: String!): Todo!
-    updateTodo(id: Int!, done: Boolean!): Todo!
+    updateTodo(id: String!, done: Boolean!): Todo!
   }
 `;
 
@@ -32,7 +32,7 @@ const resolvers = {
       });
       return newTodo;
     },
-    updateTodo: async (_: never, args: { done: boolean; id: number }) => {
+    updateTodo: async (_: never, args: { done: boolean; id: string }) => {
       const updatedTodo = await prisma.todo.update({
         where: {
           id: args.id,

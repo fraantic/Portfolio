@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { insertTodoMutation, updateTodoMutation } from "./lib/graphql/mutation";
 import { useEffect, useState } from "react";
+
 import { useMutation, useQuery } from "@apollo/client";
 
 import { getTodosQuery } from "@/app/lib/graphql/query";
@@ -29,6 +30,7 @@ export default function Home() {
     }
   }, [dataCreate, refetch, dataUpdate]);
 
+  console.log(data)
   if (error) return <p>Error</p>;
 
   return (
