@@ -11,7 +11,7 @@ datasource db {
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 model Todo {
-  id        Int @id @default(sequence())
+  id        Int @id @default(1)
   title     String
   done      Boolean  @default(false)
   createdAt DateTime @default(now())
