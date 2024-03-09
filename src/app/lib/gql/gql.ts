@@ -14,6 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n  mutation CreateTimer($timeSince: Int!) {\n    CreateTimer(timeSince: $timeSince) {\n      createdAt\n      id\n      timeSince\n    }\n  }\n": types.CreateTimerDocument,
+    "\n  mutation updateTimer($timeSince: Int!) {\n    UpdateTimer(timeSince: $timeSince) {\n      id\n      createdAt\n      timeSince\n    }\n  }\n": types.UpdateTimerDocument,
     "\n  query TimerQuery {\n    timer {\n      id\n      createdAt\n      timeSince\n    }\n  }\n": types.TimerQueryDocument,
 };
 
@@ -35,6 +36,10 @@ export function gql(source: string): unknown;
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "\n  mutation CreateTimer($timeSince: Int!) {\n    CreateTimer(timeSince: $timeSince) {\n      createdAt\n      id\n      timeSince\n    }\n  }\n"): (typeof documents)["\n  mutation CreateTimer($timeSince: Int!) {\n    CreateTimer(timeSince: $timeSince) {\n      createdAt\n      id\n      timeSince\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  mutation updateTimer($timeSince: Int!) {\n    UpdateTimer(timeSince: $timeSince) {\n      id\n      createdAt\n      timeSince\n    }\n  }\n"): (typeof documents)["\n  mutation updateTimer($timeSince: Int!) {\n    UpdateTimer(timeSince: $timeSince) {\n      id\n      createdAt\n      timeSince\n    }\n  }\n"];
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

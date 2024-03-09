@@ -12,7 +12,7 @@ export const CreateTimerMutation = gql(/* GraphQL */ `
 
 export const UpdateTimer = gql(/* GraphQL */ `
   mutation updateTimer($timeSince: Int!) {
-    updateTodo(timeSince: $timeSince) {
+    UpdateTimer(timeSince: $timeSince) {
       id
       createdAt
       timeSince
