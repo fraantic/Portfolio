@@ -1,3 +1,5 @@
 npx graphql-codegen
 
-to generate shit u know
+run this after changing the schema.or legit anything in the route.ts file
+
+then if making a change to the prisma schema run the development change
