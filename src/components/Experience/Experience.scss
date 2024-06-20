@@ -4,6 +4,9 @@
   justify-content: center;
   margin-top: 200px;
   width: 100%;
+  @media (max-width: 999px) {
+    margin-top: 50px;
+  }
   .experience-container-bottom {
     width: 1000px;
     .header-container {
@@ -17,6 +20,9 @@
         margin: 0;
         font-size: 3.3125rem;;
         font-weight: 900;
+        @media (max-width: 999px) {
+          margin-left: 10px;
+        }
         .About-dot {
           margin: 0;
           display: inline;
@@ -33,6 +39,11 @@
       flex-direction: column;
       margin-top: 60px;
       gap: 30px;
+      @media (max-width: 999px) {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
+      }
       .experience-item-container {
         display: flex;
         flex-direction: column;

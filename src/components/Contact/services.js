@@ -14,6 +14,7 @@ import Link from "next/link";
 import Contact from './contact'
 
 import './Contact.scss'
+import { Desktop } from "@/utils/mobilepc";
 
 const Services = () => {
 
@@ -32,7 +33,9 @@ const Services = () => {
           <Reveal>
             <h1 className="contact-title">Services<p className="About-dot">.</p></h1>
           </Reveal>
-          <div className="contact-line"/>
+          <Desktop>
+            <div className="contact-line"/>
+          </Desktop>
         </div>
         <div className="card-container-outer">
           {data.map((data, index) => {
@@ -127,12 +130,6 @@ const TiltCard = ({data, handleShow}) => {
           </Reveal>
 
           <button className="buy-btn" onClick={() => handleShow()}><Reveal><p className="contact-btn-text">Contact</p></Reveal><p className="About-dot">.</p></button>
-
-          
-          
-          
-          
-          
         </div>
       </div>
     </motion.div>

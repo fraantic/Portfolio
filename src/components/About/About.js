@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import prof from '/public/proffesional.svg'
 import cas from '/public/casual.svg'
+import { Desktop, Mobile } from '@/utils/mobilepc'
 
 import './About.scss'
 
@@ -16,10 +17,12 @@ const About = () => {
           <Reveal>
             <h1 className="About-title">About<p className="About-dot">.</p></h1>
           </Reveal>
-          <div className="about-line"/>
-          <Reveal>
-            <h2 className="About-title">SkillSet<p className="About-dot">.</p></h2>
-          </Reveal>
+          <Desktop>
+            <div className="about-line"/>
+            <Reveal>
+              <h2 className="About-title">SkillSet<p className="About-dot">.</p></h2>
+            </Reveal>
+          </Desktop>
         </div>
 
         <div className="about-content-container">
@@ -27,16 +30,22 @@ const About = () => {
             <Reveal>
             <p className="about-description-text">I am a versatile fullstack web developer and software engineer with a passion for crafting innovative digital solutions. With a strong foundation in TypeScript, JavaScript, HTML, CSS, and Python, I specialize in building dynamic and responsive websites, robust backend systems, and engaging mobile applications.</p>
             </Reveal>
+            <div className="about-line"/>
             <Reveal>
             <p className="about-description-text">My expertise extends to a variety of frameworks and technologies, including the React framework, Next.js, Apollo GraphQL, and Express.js. Whether it&apos;s creating intuitive user interfaces, optimizing backend performance, or developing seamless mobile experiences, I have the skills and experience to bring your ideas to life.</p>
             </Reveal>
+            <div className="about-line"/>
             <Reveal>
             <p className="about-description-text">I thrive in fast-paced environments and enjoy collaborating with teams to deliver high-quality solutions that meet and exceed expectations. With a keen eye for detail and a commitment to continuous learning, I am always exploring new technologies and best practices to stay at the forefront of the ever-evolving tech landscape.</p>
             </Reveal>
           </div>
 
           <div className="about-techstack">
-
+            <Mobile>
+              <Reveal>
+                <h2 className="About-title">SkillSet<p className="About-dot">.</p></h2>
+              </Reveal>
+            </Mobile>
             <Reveal>
             <div className="about-skilled">
               <div className="techstack-header-title">

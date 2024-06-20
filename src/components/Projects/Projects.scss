@@ -1,25 +1,31 @@
 .horizontal-scroll-carousel-container {
-  height: 300vh;
+  height: 50%;
   position: relative;
-  .horizontal-scroll-carousel-motion-div-container {
-    overflow: visible;
-    position: sticky;
+  .project-title-container {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    top: 0;
-    height: 100vh;
-    .horizontal-scroll-carousel-motion-div {
-      display: flex;
-      gap: 4vh;
-      .first-card {
-        
-      }
-      .projects-title {
-        margin-top: -125px;
-        font-size: 53px;
-      }
+    @media (max-width: 999px) {
+      width: auto;
     }
+    .projects-title {
+      margin: 0;
+      font-size: 53px;
+      font-weight: 900;
+      @media (max-width: 999px) {
+        margin-left: 10px;
+      }
   }
+  .projects-line {
+    border-top: 2px solid #696969;
+    width: 72%;
+  }
+  }
+    
 }
 
 .closed-card:hover .card-image {
@@ -32,7 +38,10 @@
   height: 478px;
   width: 960px;
   overflow: visible;
-  
+  @media (max-width: 999px) {
+    width: 90vw;
+    height: auto;
+  }
   
   border-radius: 13px;;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -42,6 +51,10 @@
     height: 478px;
     width: 960px;
     transition: all .2s ease-in-out;
+    @media (max-width: 999px) {
+      width: 100%;
+      height: 100%;
+    }
   }
   
   .card-text-container {
@@ -51,6 +64,7 @@
     justify-content: center;
     inset: 0;
     z-index: 10;
+    
   }
   .card-text {
     border-radius: 100px;
@@ -62,6 +76,15 @@
     font-size: 25px;
     font-weight: 600;
     background-image: linear-gradient(140deg, rgba(234, 222, 219, 0.4) 0%, rgba(188, 112, 164, 0.4) 50%, rgba(191, 214, 65, 0.4) 75%);
+    @media (max-width: 999px) {
+      font-size: 4vw;
+      border-radius: 30px;
+      width: 160px;
+      padding-top: 10px;
+      height: 35px;
+      text-align: center;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -194,3 +217,32 @@
   display: inline;
   color: rgb(177, 142, 78);
 }
+
+.swiper {
+  width: 70%;
+  height: 100%;
+  @media (max-width: 999px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    height: 30vh;
+  }
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  @media (max-width: 999px) {
+    margin-left: 0;
+    gap: 10px;
+    height: 100%;
+  }
+}
+

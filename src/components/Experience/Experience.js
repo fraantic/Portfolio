@@ -1,6 +1,7 @@
 import React from "react";
 import Reveal from "../Reveal/Revealbox";
 import './Experience.scss'
+import { Desktop, Mobile } from '@/utils/mobilepc'
 
 const Experience = () => {
   return (
@@ -11,9 +12,11 @@ const Experience = () => {
           <Reveal>
             <h1 className="About-title">Experience<p className="About-dot">.</p></h1>
           </Reveal>
-          <div className="about-line"/>
+          <Desktop>
+            <div className="about-line"/>
+          </Desktop>
         </div>
-
+      
         <div className="experience-container-list">
           {lists.map((list) => (
             <Experienceitem list={list} key={list.id} /> 

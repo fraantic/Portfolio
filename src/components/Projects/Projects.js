@@ -3,8 +3,14 @@ import { useRef, useState } from "react";
 import Image from "next/image";;
 import Link from "next/link";
 import Reveal from "../Reveal/Revealbox";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
+
 
 import './Projects.scss'
+import { Desktop, Mobile } from "@/utils/mobilepc";
 
 const carousel = () => {
   return (
@@ -17,35 +23,56 @@ const carousel = () => {
 };
 
 const HorizontalScrollCarousel = () => {
-  const targetRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", `-55%`]);
-
   return (
-    <section ref={targetRef} className="horizontal-scroll-carousel-container">
-      <div className="horizontal-scroll-carousel-motion-div-container">
-        <motion.div style={{ x }} className="horizontal-scroll-carousel-motion-div">
-
-            {cards.map((card, index) => {
-              if (index === 0) {
-                return (
-                <div key={index}>
-                    <h1 className="projects-title">Projects<p className="golden-dot">.</p></h1>
-                    <div className="first-card">
-                      <Card card={card} key={card.id} />  
-                    </div>
-                  
-                </div>
-                )
-              }
-              return  <Card card={card} key={card.id} /> 
-            })}
-          
-        </motion.div>
+    <section className="horizontal-scroll-carousel-container">
+      <div className="project-title-container">
+        <h1 className="projects-title">Projects<p className="golden-dot">.</p></h1>
+        <Desktop>
+        <div className="projects-line"/>
+        </Desktop>
       </div>
+      <Desktop>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={100}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {cards.map((card, index) => {
+                return (
+                <SwiperSlide key={index} >
+                  <Card card={card} key={card.id} />
+                </SwiperSlide>
+              ) 
+            })}
+
+        </Swiper>
+
+      </Desktop>
+      <Mobile>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={500}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {cards.map((card, index) => {
+                return (
+                <SwiperSlide key={index} >
+                  <Card card={card} key={card.id} />
+                </SwiperSlide>
+              ) 
+            })}
+
+        </Swiper>
+
+      </Mobile>
     </section>
   );
 };
@@ -57,14 +84,29 @@ const Card = ({ card }) => {
     <>
     <div key={card.id} className={`card-container ${!isOpen && "closed-card"}`}>
     {!isOpen ? (
-      <div onClick={() => setIsOpen(true)} >
-        <Image src={card.url} width={960} height={478} className="card-image" alt="hi" quality={50}/>
-        <div className="card-text-container">
-          <p className="card-text">
-            {card.title}
-          </p>
+      <>
+        <Desktop>
+          <div onClick={() => setIsOpen(true)} >
+          <Image src={card.url} width={960} height={478} className="card-image" alt="hi" quality={50}/>
+          <div className="card-text-container">
+            <p className="card-text">
+              {card.title}
+            </p>
+          </div>
         </div>
-      </div>
+        </Desktop>
+
+        <Mobile>
+          <div onClick={() => setIsOpen(false)} >
+          <Image src={card.url} width={960} height={478} className="card-image" alt="hi" quality={50}/>
+          <div className="card-text-container">
+            <p className="card-text">
+              {card.title}
+            </p>
+          </div>
+        </div>
+        </Mobile>
+      </>
     ) : (
       <AnimatePresence onClick={() => setIsOpen(false)}>
         <Image src={card.url} width={960} height={478} className="card-image" alt="hi" quality={50} style={{ filter:"blur(5px)"}}/>

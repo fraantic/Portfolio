@@ -5,6 +5,8 @@ import Reveal from "../Reveal/RevealSlide";
 
 import github from '/public/github.svg'
 import LinkedIn from '/public/LinkedIn.svg'
+
+import { Desktop, Mobile } from '@/utils/mobilepc'
 import './Nav.scss'
 
 const Nav = () => {
@@ -30,29 +32,31 @@ const Nav = () => {
           </Reveal>
           
         </div>
-        <div className="Right-Navi">
-          
-          <Reveal>
-            <Link className="Navi-link-text" href="#wrapper">Home</Link>
-          </Reveal>
+        <Desktop>
+          <div className="Right-Navi">
+            
+            <Reveal>
+              <Link className="Navi-link-text" href="#wrapper">Home</Link>
+            </Reveal>
 
-          <Reveal delay1={0.1}>
-            <Link className="Navi-link-text" href="#about">About</Link>
-          </Reveal>
-          
-          <Reveal delay1={0.2}>
-            <Link className="Navi-link-text" href="#projects">Projects</Link>
-          </Reveal>
-          
-          <Reveal delay1={0.3}>
-            <Link className="Navi-link-text" href="#experience">Experience</Link>
-          </Reveal>
-  
-          <Reveal delay1={0.4}>
-            <Link className="Navi-link-text" href="#contact">Contact</Link>
-          </Reveal>
-          
-        </div>
+            <Reveal delay1={0.1}>
+              <Link className="Navi-link-text" href="#about">About</Link>
+            </Reveal>
+            
+            <Reveal delay1={0.2}>
+              <Link className="Navi-link-text" href="#projects">Projects</Link>
+            </Reveal>
+            
+            <Reveal delay1={0.3}>
+              <Link className="Navi-link-text" href="#experience">Experience</Link>
+            </Reveal>
+    
+            <Reveal delay1={0.4}>
+              <Link className="Navi-link-text" href="#contact">Contact</Link>
+            </Reveal>
+            
+          </div>
+        </Desktop>
       </div>
     
   );
