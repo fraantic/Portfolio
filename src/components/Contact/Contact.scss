@@ -1,0 +1,288 @@
+.contact-container {
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+  margin-bottom: 200px;
+  gap: 60px;
+  @media (max-width: 999px) {
+    height: auto;
+  }
+  .contact-container-lower {
+    width: 1050px;
+    @media (max-width: 999px) {
+      width: 100%;
+    }
+    .contact-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .contact-title {
+      margin-left: 10px;
+      font-size: 3.3125rem;
+      font-weight: 900;
+    }
+    .contact-line {
+      border-top: 2px solid #696969;
+      width: 72%;
+    }
+  }
+  .card-container-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+    height: 100%;
+    @media (max-width: 999px) {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+  .card-container {
+      position: relative;
+      height: 26rem;
+      width: 19rem;;
+      background-color: #424242;
+      box-shadow: rgba(177, 142, 78, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    .card-container-bottom {
+      position: absolute;
+      inset: 1rem;
+      
+      place-content: center;
+      background-color: #111111;
+      border-radius: 10px;;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      .card-content-container {
+        display: flex;
+        flex-direction: column;
+
+        padding: 0px 20px;
+        justify-content: space-between;
+        height: 100%;
+        .card-title {
+          font-size: 21px;
+          margin: 0px;
+          margin-top: 20px;;
+        }
+        .card-desc{
+          font-size: 15px;
+          font-weight: 200;
+        }
+        .buy-btn {
+          display: flex;
+          outline: none;
+          cursor: pointer;
+          font-weight: 600;
+          border-radius: 3px;
+          padding: 10px 17px;
+          max-width: 45%;
+          border: 0;
+          color: #fff;
+          background: #1a1a1a;
+          line-height: 1.15;
+          font-size: 14px;
+          margin-bottom: 20px;;
+          border-radius: 5px;
+        }
+        .contact-btn-text {
+          margin: 0;
+          display: inline;
+        }
+        .buy-btn:hover {
+          transition: all .1s ease;
+          box-shadow: 0 0 0 0 #fff, 0 0 0 3px rgb(177, 142, 78);
+        }
+        .card-img {
+          border-radius: 10px;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+}
+
+.About-dot {
+  margin: 0;
+  display: inline;
+  color: rgb(177, 142, 78);
+}
+
+.modal {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100wh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-bg {
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .modal-click-close {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    
+    cursor: pointer;
+  }
+  .modal-fg {
+    z-index: 10;
+    width: 590px;
+    height: 520px;
+    background-color: #111111;
+    border: #fff 1px solid;
+    border-radius: 10px;
+    cursor: default;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    padding: 0px 30px;
+    @media (max-width: 999px) {
+      width: 95vw;
+      max-width: 590px;
+      height: auto;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      
+    }
+    .modal-quick-contact {
+      background-color: #111111;
+      border: #414141 1px solid;
+      padding: 0 20px;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      border-radius: 10px;
+    }
+  }
+}
+
+.close-btn {
+  position: relative;
+  box-sizing: border-box;
+  width: 3em;
+  height: 3em;
+  border-radius: 4em;
+  border: 1px solid #c2c7cc;
+  color: transparent;
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+.close-btn:before,
+.close-btn:after {
+  position: absolute;
+  width: 1.5em;
+  height: 1px;
+  left: 50%;
+  top: 50%;
+  margin-left: -0.75em;
+  content: '';
+  background: #8a9199;
+  transition: all ease 1s;
+}
+.close-btn:before {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.close-btn:after {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.close-btn:hover,
+.close-btn:focus {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  border-color: #f26a3d;
+  background: rgba(242, 106, 61, 0.1);
+}
+.close-btn:hover:before,
+.close-btn:focus:before,
+.close-btn:hover:after,
+.close-btn:focus:after {
+  background: red;
+}
+
+.form-container {
+  display: flex;
+  margin-top: 20px;
+  height: 580px;
+  flex-direction: column;
+  gap:10px;
+  @media (max-width: 999px) {
+    height: auto;
+  }
+  .form-submit-button {
+    display: flex;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 10px 17px;
+    max-width: 45%;
+    border: 0;
+    color: #fff;
+    background: #1a1a1a;
+    line-height: 1.15;
+    font-size: 14px;
+    margin-bottom: 20px;;
+    border-radius: 5px;
+  }
+  .form-submit-button:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px rgb(177, 142, 78);
+  }
+  .form-title {
+    font-weight: 500;
+    font-size: 18px;
+    color: red;
+    display: inline;
+  }
+  .duo-form-div {
+    display: flex;
+    justify-content: space-between;
+    @media (max-width: 999px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  .form-box {
+    background-color: #242424;
+    border: hsl(0, 0%, 14%);
+    border-radius: 3px;
+    width: auto;
+    height: 50px;
+    color: white;
+    font-size: 15px;
+  }
+  .form-name-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-number-container {
+    @extend .form-name-container;
+  }
+  .form-email-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .form-message-container {
+    @extend .form-name-container;
+  }
+}

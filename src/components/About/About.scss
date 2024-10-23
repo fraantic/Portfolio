@@ -1,0 +1,149 @@
+.about-container-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+  width: 100%;
+  .about-container-bottom {
+    width: 1000px;
+    @media (max-width: 999px) {
+      width: 100%;
+    }
+    .header-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      align-items: center;
+      @media (max-width: 999px) {
+        width: 57%;
+      }
+      .About-title {
+        margin: 0;
+        font-size: 53px;;
+        font-weight: 900;
+        @media (max-width: 999px) {
+          margin-left: 20px;
+        }
+        .About-dot {
+          margin: 0;
+          display: inline;
+          color: rgb(177, 142, 78);
+        }
+      }
+      .about-line {
+        border-top: 2px solid #696969;
+        @media (max-width: 999px) {
+          width: 57%;
+        }
+        width: 57%;
+      }
+    }
+    .about-content-container {
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: space-between;
+      @media (max-width: 999px) {
+        flex-direction: column;
+        height: auto;
+      }
+      .about-line {
+        @media (max-width: 999px) {
+          width: 90%;
+          border-top: 2px solid #696969;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .about-description {
+       width: 680px;
+       @media (max-width: 999px) {
+        width: auto;
+        display: flex;
+        flex-direction: column;
+      }
+       .about-description-text {
+        font-weight: 200;
+        font-size: 18px;
+        @media (max-width: 999px) {
+          text-align: center;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+       }
+      }
+      .about-techstack {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 300px;
+        @media (max-width: 999px) {
+          width: auto;
+          margin-left: 20px;
+          margin-top: 70px;
+          margin-right: 20px;
+        }
+        .About-title {
+          margin: 0;
+          font-size: 53px;
+          font-weight: 900;
+          @media (max-width: 999px) {
+            font-size: 53px;
+          }
+        }
+        .about-skilled {
+          height: auto;
+        }
+        .about-beginner {
+          height: auto;
+        }
+        .techstack-header-title {
+          display: flex;
+          justify-content: left;
+          align-items: center;
+          gap: 10px;
+          margin-top: 15px;
+          
+          .techstack-title {
+            display: inline;
+            font-size: 20px;
+            margin: 0;
+            font-weight: 700;
+          }
+        }
+        .teckstack-list {
+          margin-top: 20px;
+          display: flex;
+          gap: 10px;
+          max-width: 300px;
+          flex-wrap: wrap;
+          @media (max-width: 999px) {
+            max-width: none;
+          }
+          .teckstack-item {
+            background-color: #232323;
+            border-radius: 999px;
+            font-weight: 500;
+            font-size: 15px;
+            margin: 0;
+            display: inline;
+            padding: .2em .8em;
+          }
+        }
+      }
+
+    }
+  }
+
+}
+
+#about {
+  scroll-margin-top: 100px;
+}
+
+.fade-ending {
+  background: (180deg, #111111, #080808);
+  height: 200px;
+}

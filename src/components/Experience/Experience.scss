@@ -1,0 +1,122 @@
+.experience-container-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  width: 100%;
+  @media (max-width: 999px) {
+    margin-top: 50px;
+  }
+  .experience-container-bottom {
+    width: 1000px;
+    .header-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+      align-items: center;
+      .About-title {
+        margin: 0;
+        font-size: 3.3125rem;;
+        font-weight: 900;
+        @media (max-width: 999px) {
+          margin-left: 10px;
+        }
+        .About-dot {
+          margin: 0;
+          display: inline;
+          color: rgb(177, 142, 78);
+        }
+      }
+      .about-line {
+        border-top: 2px solid #696969;
+        width: 65%;
+      }
+    }
+    .experience-container-list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 60px;
+      gap: 30px;
+      @media (max-width: 999px) {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 20px;
+      }
+      .experience-item-container {
+        display: flex;
+        flex-direction: column;
+        .experience-line {
+          margin-top: 30px;;
+          border-top: 1px solid rgba($color: #696969, $alpha: 0.3);
+          width: 100%;
+        }
+      
+        .experience-item-header {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          .experience-item-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .experience-item-job-title {
+              font-size: 1.3rem;
+              font-weight: 600;
+              margin: 0;
+            }
+            .experience-item-date-range {
+              font-size: 1.1rem;
+              font-weight: 400;
+              margin: 0;
+            }
+            
+          }
+          .experience-item-date {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .experience-item-company-name {
+              font-size: 1.3rem;
+              font-weight: 600;
+              color: rgb(177, 142, 78);
+              margin: 0;
+            }
+            .experience-item-location {
+              font-size: 1.1rem;
+              font-weight: 400;
+              margin: 0;
+            }
+          }
+        }
+        .experience-item-description {
+          .experience-item-description-text {
+            font-weight: 300;
+          }
+        }
+        .experience-item-techstack {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          flex-wrap: wrap;
+          .experience-item-techstack-item {
+
+              background-color: #232323;
+              border-radius: 999px;
+              font-weight: 500;
+              font-size: 15px;
+              margin: 0;
+              display: inline;
+              padding: .2em .8em;
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+#experience {
+  scroll-margin-top: 100px;
+}
